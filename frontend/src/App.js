@@ -1,25 +1,16 @@
-import LoginPage from "./Pages/LoginPage";
-import RegistrationPage from "./Pages/RegistrationPage";
-// import { Route, RouterProvider, createBrowserRouter, createRoutesFromElements } from "react-router-dom";
+import BikePage from "./Pages/BikePage/BikePage";
+import CarPage from "./Pages/CarPage/CarPage";
+import VehicleForm from "./Pages/AddVehiclePage/VehicleForm";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-
-
-// const router =  createBrowserRouter(
-//   createRoutesFromElements(
-//     <Route path="/register" element={<RegistrationPage/>} />,
-//     <Route path="/login" element={<LoginPage/>} />
-//   )
-// )
 
 function App() {
   return (
     <>
-    {/* <RegistrationPage /> */}
-    {/* <RouterProvider router={router} /> */}
     <BrowserRouter >
       <Routes>
-        <Route path="/" element={<RegistrationPage />} />
-        <Route path="/login" element={<LoginPage />} />
+          <Route path="/" element={<VehicleForm />}/>
+          <Route path="Bike" element={<BikePage/> } />
+          <Route path="Car" element={<CarPage/>} />
       </Routes>
     </BrowserRouter >
     </>

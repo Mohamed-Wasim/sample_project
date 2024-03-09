@@ -1,18 +1,25 @@
 const mongoose = require('mongoose');
 
-const userSchema = new mongoose.Schema({
-    username:{
+const vehicleSchema = new mongoose.Schema({
+    vehicleType:{
+        type:'String',
+        enum: ['Car', 'Bike', 'Truck'],
+        require:true
+    },
+    vehicleName:{
         type:'String',
         require:true
     },
-    email:{
+    vehicleModel:{
         type:'String',
         require:true
     },
-    password :{
-        type:'String',
+    vehicleChk :{
+        type:'Boolean',
         require:true
     }
+},{
+    timestamps: true
 });
 
-module.exports = mongoose.model('user',userSchema);
+module.exports = mongoose.model('vehicle',vehicleSchema);

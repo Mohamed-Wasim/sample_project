@@ -8,7 +8,18 @@ const FormComponent = (props) => {
     <>
       <Form.Group className="mb-3" controlId="formUsername">
         <Form.Label>{props.label}</Form.Label>
-        <Form.Control {...props} className="form-control" />
+        {props?.isInput ? (
+          <Form.Control {...props} className="form-control" />
+        ) : (
+          <Form.Select aria-label="Default select example">
+            <option>Select</option>
+            {props?.data?.map((data, index) => (
+              <option value={data} key={index}>
+                {data}
+              </option>
+            ))}
+          </Form.Select>
+        )}
       </Form.Group>
     </>
   );
