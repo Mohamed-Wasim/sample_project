@@ -12,11 +12,14 @@ const NavLayout = () => {
             <Nav.Link as={NavLink} to="/" exact>
               Add Vehicle
             </Nav.Link>
+            <Nav.Link as={NavLink} to="/VehicleTable">
+              Vehicles
+            </Nav.Link>
             <Nav.Link as={NavLink} to="/Bike">
-              Bike
+              Vehicles1
             </Nav.Link>
             <Nav.Link as={NavLink} to="/Car">
-              Car
+              Emission
             </Nav.Link>
           </Nav>
         </Container>

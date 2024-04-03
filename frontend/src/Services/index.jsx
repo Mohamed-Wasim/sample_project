@@ -2,6 +2,7 @@ import axios from "axios";
 
 // create the httpRequest -> post
 export const handleCreate = async (url, data) => {
+  console.log(data);
   try {
     const response = await axios.post(url, data);
     return response.data;

@@ -1,18 +1,8 @@
 import React from "react";
 import { Table, Container } from "react-bootstrap";
 
-const aVehicle = [
-  "BIKES",
-  "CARS",
-  "CYCLES",
-  "BUS",
-  "AUTO",
-  "VAN",
-  "HEAVY VEHICLE",
-];
-
 const TableComponent = (props) => {
-  const { header, TableHeading } = props;
+  const { header, TableHeading, tblData } = props;
   return (
     <>
       <Container className="addVehicle">
@@ -28,10 +18,13 @@ const TableComponent = (props) => {
             </tr>
           </thead>
           <tbody>
-            {aVehicle?.map((vehicle) => {
+            {tblData?.map((vehicle, index) => {
               return (
-                <tr>
-                  <th>{vehicle}</th>
+                <tr key={index}>
+                  <td>{vehicle?.vehicleType}</td>
+                  <td>{vehicle?.vehicleName}</td>
+                  <td>{vehicle?.vehicleModel}</td>
+                  <td>{vehicle?.vehicleChk}</td>
                 </tr>
               );
             })}

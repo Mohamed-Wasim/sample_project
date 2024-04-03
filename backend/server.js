@@ -13,6 +13,8 @@ app.use('/vehicle',vehicleRoute);
 
 // mongodb connection
 const URI = `mongodb://localhost:27017/authentication`
+// const URI = `mongodb://localhost:27017/vehicle`
+
 mongoose
 .connect(URI)
 .then(()=>{

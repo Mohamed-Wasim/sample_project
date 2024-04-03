@@ -15,7 +15,7 @@ const vehicleSchema = new mongoose.Schema({
         require:true
     },
     vehicleChk :{
-        type:'Boolean',
+        type:'String',
         require:true
     }
 },{

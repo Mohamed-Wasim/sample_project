@@ -9,17 +9,33 @@ const FormComponent = (props) => {
       <Form.Group className="mb-3" controlId="formUsername">
         <Form.Label>{props?.label}</Form.Label>
         {props?.isInput ? (
-          <Form.Control {...props} className="form-control" />
+          <>
+            <Form.Control
+              type={props.type}
+              placeholder={props.placeholder}
+              name={props.name}
+              onChange={props.onChange}
+              className="form-control"
+            />
+            {props.touched && props.error ? <div>{props.error}</div> : null}
+          </>
         ) : (
-          <Form.Select aria-label="Default select example">
-            <option>Select</option>
-            {props?.value?.map((data, index) => (
-              <option value={data} key={index}>
-                {data}
-              </option>
-            ))}
-            {props?.error && <span>{props?.error}</span>}
-          </Form.Select>
+          <>
+            <Form.Select
+              name={props.name}
+              onChange={props.onChange}
+              onBlur={props.onBlur}
+              value={props.value}
+            >
+              <option value="">Select</option>
+              {props?.options?.map((option, index) => (
+                <option key={index} value={option}>
+                  {option}
+                </option>
+              ))}
+            </Form.Select>
+            {props.touched && props.error ? <div>{props.error}</div> : null}
+          </>
         )}
       </Form.Group>
     </>
