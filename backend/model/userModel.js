@@ -3,7 +3,7 @@ const mongoose = require('mongoose');
 const vehicleSchema = new mongoose.Schema({
     vehicleType:{
         type:'String',
-        enum: ['Car', 'Bike', 'Truck'],
+        enum: ['Cars', 'Bikes', 'Cycles',"Bus","Auto","Van","Heavy_Vehicle"],
         require:true
     },
     vehicleName:{

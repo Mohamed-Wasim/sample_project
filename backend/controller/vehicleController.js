@@ -6,10 +6,10 @@ const createVehicle = async (req,res) => {
         const oVehicleReq = req.body;
 
         // check the exist vehicleDetails
-        const existVehicleDtls = await userModel.findOne(oVehicleReq);
-        if(existVehicleDtls){
-            return res.status(400).json({message:`this vehicle details is already exists`});
-        }
+        // const existVehicleDtls = await userModel.findOne(oVehicleReq);
+        // if(existVehicleDtls){
+        //     return res.status(400).json({message:`this vehicle details is already exists`});
+        // }
 
         // Create vehicle
         const newVehicle = new userModel(oVehicleReq);

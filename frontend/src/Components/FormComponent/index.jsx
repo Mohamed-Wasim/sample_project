@@ -1,5 +1,5 @@
 import React from "react";
-// import "./styles.css";
+import "./style.css";
 import { Form } from "react-bootstrap";
 import "bootstrap/dist/css/bootstrap.min.css";
 
@@ -15,9 +15,14 @@ const FormComponent = (props) => {
               placeholder={props.placeholder}
               name={props.name}
               onChange={props.onChange}
-              className="form-control"
+              value={props.value}
+              className="form-control InputForm"
             />
-            {props.touched && props.error ? <div>{props.error}</div> : null}
+            {props.touched && props.error ? (
+              <div style={{ color: "red", margin: "5px 0 0 2px" }}>
+                {props.error}
+              </div>
+            ) : null}
           </>
         ) : (
           <>
@@ -26,6 +31,7 @@ const FormComponent = (props) => {
               onChange={props.onChange}
               onBlur={props.onBlur}
               value={props.value}
+              className={props.touched && props.error ? "InputForm" : ""}
             >
               <option value="">Select</option>
               {props?.options?.map((option, index) => (
@@ -34,7 +40,11 @@ const FormComponent = (props) => {
                 </option>
               ))}
             </Form.Select>
-            {props.touched && props.error ? <div>{props.error}</div> : null}
+            {props.touched && props.error ? (
+              <div style={{ color: "red", margin: "5px 0 0 2px" }}>
+                {props.error}
+              </div>
+            ) : null}
           </>
         )}
       </Form.Group>

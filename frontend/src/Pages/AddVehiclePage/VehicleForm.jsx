@@ -15,23 +15,10 @@ const vehicleType = [
   "Bus",
   "Auto",
   "Van",
-  "Heavy Vehicle",
+  "Heavy_Vehicle",
 ];
 const vehicleChk = ["In", "Out"];
 const vehicleModel = ["hello"];
-
-const data = {
-  Cars: {
-    Kia: ["Kia Seltos GTX"],
-  },
-  Bikes: {
-    royalEnfield: ["Hunter"],
-    Bajaj: ["Bajaj Pulsar NS200", "Bajaj CT 100"],
-    Honda: ["Honda Activa", "Honda Shine"],
-    Splendor: ["Hero Splendor Plus", "Hero Splendor Plus Xtec"],
-    Yamaha: ["FZ-X", "MT-15", "R15"],
-  },
-};
 
 const initialValues = {
   vehicleType: "",
@@ -44,8 +31,9 @@ const VehicleForm = () => {
   const formik = useFormik({
     initialValues: initialValues,
     validationSchema: VehicleSchema,
-    onSubmit: async (values) => {
-      handleCreate("/vehicle/create-vehicle", values);
+    onSubmit: async (values, { resetForm }) => {
+      await handleCreate("/vehicle/create-vehicle", values);
+      resetForm();
     },
   });
 
@@ -53,14 +41,16 @@ const VehicleForm = () => {
     <>
       <Container className="addVehicle">
         {/* <SliderComponent /> */}
-        <h3 className="mt-3">Add Vehicle</h3>
+        <h3 className="mt-3" style={{ color: "#831238" }}>
+          Add vehicle
+        </h3>
         <div className="Registration_Container">
           <div className="RegistrationUser_container card ">
             <Form onSubmit={formik.handleSubmit} className="p-3">
               <FormComponent
                 isInput={false}
                 name="vehicleType"
-                label="Vehicle Type"
+                label="Vehicle type"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.vehicleType}
@@ -73,7 +63,7 @@ const VehicleForm = () => {
                 isInput={true}
                 type="text"
                 placeholder="Enter the vehicle name"
-                label="Vehicle Name"
+                label="Vehicle name"
                 name="vehicleName"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
@@ -82,9 +72,11 @@ const VehicleForm = () => {
               />
 
               <FormComponent
-                isInput={false}
+                isInput={true}
+                type="text"
+                placeholder="Enter the vehicle Model"
                 name="vehicleModel"
-                label="vehicle Model"
+                label="vehicle model"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.vehicleModel}
@@ -96,7 +88,7 @@ const VehicleForm = () => {
               <FormComponent
                 isInput={false}
                 name="vehicleChk"
-                label="Vehicle In/Out"
+                label="Vehicle in/out"
                 onChange={formik.handleChange}
                 onBlur={formik.handleBlur}
                 value={formik.values.vehicleChk}

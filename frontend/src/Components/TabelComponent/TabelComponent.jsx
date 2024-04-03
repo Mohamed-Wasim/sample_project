@@ -4,10 +4,10 @@ import { Table, Container } from "react-bootstrap";
 const TableComponent = (props) => {
   const { header, TableHeading, tblData } = props;
   return (
-    <>
-      <Container className="addVehicle">
+    <div style={{ padding: "none" }}>
+      <Container className="addVehicle mt-4">
         <div>
-          <h3>{TableHeading}</h3>
+          <h3 style={{ color: "#831238" }}>{TableHeading}</h3>
         </div>
         <Table striped bordered hover>
           <thead>
@@ -31,7 +31,7 @@ const TableComponent = (props) => {
           </tbody>
         </Table>
       </Container>
-    </>
+    </div>
   );
 };
 
