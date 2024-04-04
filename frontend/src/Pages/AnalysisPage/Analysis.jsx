@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../Img/analysis.pdf";
+import image4 from "../../Img/img4.PNG";
 import { Container } from "react-bootstrap";
 
 const Analysis = () => {
@@ -7,7 +7,7 @@ const Analysis = () => {
     <>
       <Container className="mt-4">
         <h3 style={{ color: "#831238" }}>Analysis</h3>
-        <img src={image} alt="analysis" />
+        <img src={image4} alt="analysis" />
       </Container>
     </>
   );

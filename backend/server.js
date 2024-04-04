@@ -12,8 +12,11 @@ app.use(express.json());
 app.use('/vehicle',vehicleRoute);
 
 // mongodb connection
-const URI = `mongodb://localhost:27017/authentication`
-// const URI = `mongodb://localhost:27017/vehicle`
+// mohamedwasimdesigner
+// wAjxkf6ol1s457we
+// wAjxkf6ol1s457we
+// const URI = `mongodb://localhost:27017/authentication`
+const URI ="mongodb+srv://mohamedwasimdesigner:wAjxkf6ol1s457we@cluster0.anosq0k.mongodb.net/"
 
 mongoose
 .connect(URI)

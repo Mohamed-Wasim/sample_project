@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import TableComponent from "../../Components/TabelComponent/TabelComponent";
 import { handleRead } from "../../Services";
 import { Container } from "react-bootstrap";
+import { toast } from "react-toastify";
 
 const VehicleTable = () => {
   const [vehicleData, setVehicleData] = useState();
@@ -14,7 +15,12 @@ const VehicleTable = () => {
 
   const fetchData = async () => {
     const data = await handleRead("/vehicle/get-vehicle");
-    setVehicleData(data.data);
+    if (data.message === "No vehicle exists") {
+      // alert(data.message);
+      toast.error(data.message);
+    } else {
+      setVehicleData(data.data);
+    }
   };
 
   useEffect(() => {

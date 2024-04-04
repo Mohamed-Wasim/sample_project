@@ -29,7 +29,7 @@ const getVehicle = async (req,res)=>{
         // get the vehicle details
         const getVehicleDtls = await userModel.find({});
         if(getVehicleDtls <= 0){
-            return res.status(400).json({message:`No vehicle exists`});
+            return res.status(200).json({message:`No vehicle exists`});
         }
 
         return res.status(200).json({count:getVehicleDtls.length,data:getVehicleDtls});

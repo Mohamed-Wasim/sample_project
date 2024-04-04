@@ -6,6 +6,7 @@ import { useFormik } from "formik";
 import ButtonComponent from "../../Components/ButtonComponent/Index";
 import { Container, Form } from "react-bootstrap";
 import { handleCreate } from "../../Services/index";
+import { toast } from "react-toastify";
 // import SliderComponent from "../../Components/SliderComponent/SliderComponent";
 
 const vehicleType = [
@@ -34,6 +35,8 @@ const VehicleForm = () => {
     onSubmit: async (values, { resetForm }) => {
       await handleCreate("/vehicle/create-vehicle", values);
       resetForm();
+      // alert("Saved successfully");
+      toast.success("saved successfully");
     },
   });
 
