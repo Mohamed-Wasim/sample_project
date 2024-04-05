@@ -29,10 +29,25 @@ const NavLayout = () => {
             </Nav.Link>
             <Nav.Link
               as={NavLink}
+              to="bulkVehicleForm"
+              style={{ letterSpacing: "1px" }}
+              exact
+            >
+              AddBulk-Vehicle
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
               to="VehicleTable"
               style={{ letterSpacing: "1px" }}
             >
               Vehicles
+            </Nav.Link>
+            <Nav.Link
+              as={NavLink}
+              to="bulkVehicleTable"
+              style={{ letterSpacing: "1px" }}
+            >
+              Bulk-Vehicles
             </Nav.Link>
             <Nav.Link
               as={NavLink}

@@ -15,8 +15,12 @@ app.use('/vehicle',vehicleRoute);
 // mohamedwasimdesigner
 // wAjxkf6ol1s457we
 // wAjxkf6ol1s457we
+// mohamedwasimdesigner
+// hkfYhfzctFAyEU1C
 // const URI = `mongodb://localhost:27017/authentication`
-const URI ="mongodb+srv://mohamedwasimdesigner:wAjxkf6ol1s457we@cluster0.anosq0k.mongodb.net/"
+// const URI ="mongodb+srv://mohamedwasimdesigner:wAjxkf6ol1s457we@cluster0.anosq0k.mongodb.net/"
+// const URI ="mongodb+srv://mohamedwasimdesigner:hkfYhfzctFAyEU1C@cluster0.kqvkmbf.mongodb.net/"
+const URI = "mongodb+srv://user2000:test1234@cluster0.kqvkmbf.mongodb.net/"
 
 mongoose
 .connect(URI)
